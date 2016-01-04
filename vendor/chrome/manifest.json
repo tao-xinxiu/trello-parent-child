@@ -14,7 +14,7 @@
     {
       "matches": [
         "https://trello.com/*",
-        "https://api.airtable.com/*"
+        "https://notify.bugsnag.com/*"
       ],
       "css": [
         "css/style.css"
@@ -22,7 +22,8 @@
       "js": [
         "js/libs/jquery.js",
         "js/libs/jquery-ui.js",
-        "js/errors-handler.js",
+        "js/libs/bugsnag.js",
+        "js/bugsnag-config.js",
         "js/config.js",
         "js/api.js",
         "js/plugins/inheritance.js",

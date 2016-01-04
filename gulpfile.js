@@ -47,7 +47,8 @@ gulp.task('chrome', function () {
       pipe('./src/js/**/*', './build/chrome/js'),
       pipe('./src/css/**/*', './build/chrome/css'),
       pipe('./src/icons/**/*', './build/chrome/icons'),
-      pipe('./vendor/chrome/errors-handler.js', './build/chrome/js'),
+      pipe('./vendor/chrome/bugsnag.js', './build/chrome/js/libs'),
+      pipe('./vendor/chrome/bugsnag-config.js', './build/chrome/js'),
       pipe('./vendor/chrome/manifest.json', [
         jeditor({
           'name': app.title,
