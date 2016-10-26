@@ -599,6 +599,7 @@
         shortLink: cardData.shortLink,
         shortUrl: cardData.shortUrl,
         url: cardData.url,
+        due: cardData.due,
         column: self.getElementByProperty(self.data.boardData.lists, 'id', cardData.idList),
         _element: _card,
         _link: _cardLink,

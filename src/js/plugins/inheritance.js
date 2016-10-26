@@ -45,7 +45,7 @@
       return '' +
           '<div class="js-card-parent">' +
           ' <h3 class="card-detail-item-header">Parent:</h3>' +
-          ' <p class="handsome-trello__inheritance-parent handsome-trello__inheritance-parent--' + parentCard.status + '"><a href="' + parentCard.url + '" class="handsome-trello__inheritance-link">' + parentCard.title + '</a> (' + (parentCard.status === 'closed' ? 'Archived' : parentCard.column.name) + ')</p>' +
+          ' <p class="handsome-trello__inheritance-parent handsome-trello__inheritance-parent--' + parentCard.status + '"><a href="' + parentCard.url + '" class="handsome-trello__inheritance-link">' + parentCard.title + '</a> (' + (parentCard.status === 'closed' ? 'Archived' : parentCard.column.name) + ') [' + (parentCard.due === null ? 'No due' : 'due: ' + (new Date(parentCard.due)).toLocaleString()) + ']</p>' +
           '</div>';
     },
 
@@ -63,6 +63,7 @@
               ' <p class="handsome-trello__inheritance-children-name">' +
               '  <a href="' + childCard.url + '" class="handsome-trello__inheritance-link">' + childCard.title + '</a>' +
               '  (' + (childCard.status === 'closed' ? 'Archived' : childCard.column.name) + ')' +
+              ' [' + (childCard.due === null ? 'No due' : 'due: ' + (new Date(childCard.due)).toLocaleString()) + ']' +
               ' </p>';
 
           if (typeof childCard.children !== 'undefined' && childCard.children.length) {
@@ -121,7 +122,7 @@
         var relatedCard = parent.children[i];
 
         if (card !== relatedCard) {
-          html += '<li class="handsome-trello__inheritance-related-item handsome-trello__inheritance-related-item--' + relatedCard.status + '"><a href="' + relatedCard.url + '" class="handsome-trello__inheritance-link">' + relatedCard.title + '</a> (' + (relatedCard.status === 'closed' ? 'Archived' : relatedCard.column.name) + ')</li>';
+          html += '<li class="handsome-trello__inheritance-related-item handsome-trello__inheritance-related-item--' + relatedCard.status + '"><a href="' + relatedCard.url + '" class="handsome-trello__inheritance-link">' + relatedCard.title + '</a> (' + (relatedCard.status === 'closed' ? 'Archived' : relatedCard.column.name) + ') [' + (relatedCard.due === null ? 'No due' : 'due: ' + (new Date(relatedCard.due)).toLocaleString()) + ']' + '</li>';
         }
       }
 
